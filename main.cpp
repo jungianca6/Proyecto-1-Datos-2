@@ -1,5 +1,5 @@
 #include <iostream>
-#include <wx/wx.h>
+//#include <wx/wx.h>
 
 enum IDs{
     botonID =2,textoID=3
@@ -10,12 +10,17 @@ enum IDs{
 #include "thread"
 #include "chrono"
 #include <stdio.h>
+#include <taglib/taglib.h>
+#include <taglib/fileref.h>
+#include <taglib/tag.h>
 #include "Circular List.cpp"
 #include "Double List.cpp"
-#include "BinaryListOperations.cpp"
+//#include "BinaryListOperations.cpp"
+
+/*
 
 using namespace std;
-class MainFrame : public wxFrame {
+class MainFrame : public wxFrame { 
 public:
     MainFrame(const wxString &title)
             : wxFrame(nullptr, wxID_ANY, title, wxDefaultPosition,
@@ -75,7 +80,11 @@ public:
         wxBitmap bitmap(image);
         image.Rescale(100, 50);
         wxBitmapButton* boton = new wxBitmapButton(this,wxID_ANY,bitmap,wxPoint(150,750));*/
+
+/*
+
     }
+
 
 private:
     void OnButtonClick(wxCommandEvent &event) {
@@ -90,6 +99,8 @@ private:
                 EVT_BUTTON(botonID,MainFrame::OnButtonClick)
 wxEND_EVENT_TABLE()*/
 
+/*
+
 class MyApp: public wxApp{
 public:
     virtual bool OnInit() override{
@@ -99,8 +110,12 @@ public:
     }
 };
 
+*/
 
 int main(int argc, char* argv[]) {
+
+    /*
+
     wxApp::SetInstance(new MyApp());
     wxEntryStart(argc, argv);
     wxTheApp->OnInit();
@@ -133,57 +148,79 @@ int main(int argc, char* argv[]) {
         cout << "Altura: " << lista[i].duracion << endl;
         cout << endl;
     }
+    */
     /*
-int opcion_menu=0;
-string nombreCancion;
-string nodoBuscado;
-do
-{
-    cout << "\n|---------------------------------------|";
-    cout << "\n|        ° LISTA CIRCULAR DOBLE °       |";
-    cout << "\n|--------------------|------------------|";
-    cout << "\n| 1. Insertar final  | 5. Print         |";
-    cout << "\n| 2. Insertar inicio | 6. Array         |";
-    cout << "\n| 3. Buscar          |                  |";
-    cout << "\n| 4. Eliminar        |                  |";
-    cout << "\n|--------------------|------------------|";
-    cout << "\n\n Escoja una Opcion: ";
-    cin >> opcion_menu;
-    switch(opcion_menu){
-        case 1:
-            cout << "\n Inserta un nodo en la lista (ultimo): ";
-            cin >> nombreCancion;
-            insert_lastdouble(nombreCancion);
-            break;
-        case 2:
-            cout << "\n Inserta un nodo en la lista (primero): ";
-            cin >> nombreCancion;
-            insert_firstdouble(nombreCancion);
-            break;
-        case 3:
-            cout << "\n Inserta el nodo que quieras buscar: ";
-            cin >> nodoBuscado;
-            buscarNododouble(nodoBuscado);
-            break;
-        case 4:
-            cout << "\n Inserta el nodo que quieras eliminar: ";
-            cin >> nodoBuscado;
-            eliminarNododouble(nodoBuscado);
-            break;
-        case 5:
-            cout << "\n Lista printeada:\n";
-            printListadouble();
-            break;
-        case 6:
-            cout << "\n Convertido en array:\n";
-            convertArraydouble();
-            break;
-        default:
-            cout << "\n Opcion no valida\n";
-            break;
+    if (argc != 2) {
+        std::cerr << "Uso: " << argv[0] << " archivo.wav" << std::endl;
+        return 1;
     }
-} while (opcion_menu != 6);
+
+    const char *filename = argv[1];
+    TagLib::FileRef file("/home/darga19/Documents/Tec/Algoritmos y Estructuras de Datos II/Música proyecto I/Hotel California.wav");
+
+    if (file.isNull() || !file.tag()) {
+        std::cerr << "No se pudieron leer los metadatos del archivo " << filename << std::endl;
+        return 1;
+    }
+
+    TagLib::Tag *tag = file.tag();
+
+    std::cout << "Nombre: " << tag->title().toCString(true) << std::endl;
+    std::cout << "Artista: " << tag->artist().toCString(true) << std::endl;
+    std::cout << "Álbum: " << tag->album().toCString(true) << std::endl;
+    std::cout << "Género: " << tag->genre().toCString(true) << std::endl;
 */
-    hilo.join();
+
+    int opcion_menu=0;
+    ListaDoble lista;
+    string nombreCancion;
+    string nodoBuscado;
+    do{
+        cout << "\n|---------------------------------------|";
+        cout << "\n|        ° LISTA CIRCULAR DOBLE °       |";
+        cout << "\n|--------------------|------------------|";
+        cout << "\n| 1. Insertar final  | 5. Print         |";
+        cout << "\n| 2. Insertar inicio | 6. Array         |";
+        cout << "\n| 3. Buscar          |                  |";
+        cout << "\n| 4. Eliminar        |                  |";
+        cout << "\n|--------------------|------------------|";
+        cout << "\n\n Escoja una Opcion: ";
+        cin >> opcion_menu;
+        switch(opcion_menu){
+            case 1:
+                cout << "\n Inserta un nodo en la lista (ultimo): ";
+                cin >> nombreCancion;
+                lista.insert_lastdouble(nombreCancion);
+                break;
+            case 2:
+                cout << "\n Inserta un nodo en la lista (primero): ";
+                cin >> nombreCancion;
+                lista.insert_firstdouble(nombreCancion);
+                break;
+            case 3:
+                cout << "\n Inserta el nodo que quieras buscar: ";
+                cin >> nodoBuscado;
+                lista.buscarNododouble(nodoBuscado);
+                break;
+            case 4:
+                cout << "\n Inserta el nodo que quieras eliminar: ";
+                cin >> nodoBuscado;
+                lista.eliminarNododouble(nodoBuscado);
+                break;
+            case 5:
+                cout << "\n Lista printeada:\n";
+                lista.printListadouble();
+                break;
+            case 6:
+                cout << "\n Convertido en array:\n";
+                lista.convertArraydouble();
+                break;
+            default:
+                cout << "\n Opcion no valida\n";
+                break;
+        }
+    } while (opcion_menu != 7);
+        //hilo.join();
+
     return 0;
 }

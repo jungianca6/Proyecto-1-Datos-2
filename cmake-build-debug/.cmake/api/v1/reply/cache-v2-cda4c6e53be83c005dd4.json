@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/dell/Escritorio/Proyecto-1-Datos-2/cmake-build-debug"
+			"value" : "/home/darga19/Documents/Tec/Algoritmos y Estructuras de Datos II/Proyecto-1-Datos-2/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -127,7 +127,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-j8"
+			"value" : "-j4"
 		},
 		{
 			"name" : "CMAKE_COLOR_DIAGNOSTICS",
@@ -627,7 +627,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/dell/Escritorio/Proyecto-1-Datos-2/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/home/darga19/Documents/Tec/Algoritmos y Estructuras de Datos II/Proyecto-1-Datos-2/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -687,7 +687,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/dell/Escritorio/Proyecto-1-Datos-2"
+			"value" : "/home/darga19/Documents/Tec/Algoritmos y Estructuras de Datos II/Proyecto-1-Datos-2"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1283,7 +1283,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/dell/Escritorio/Proyecto-1-Datos-2/cmake-build-debug"
+			"value" : "/home/darga19/Documents/Tec/Algoritmos y Estructuras de Datos II/Proyecto-1-Datos-2/cmake-build-debug"
 		},
 		{
 			"name" : "Proyecto_1_IS_TOP_LEVEL",
@@ -1307,7 +1307,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/dell/Escritorio/Proyecto-1-Datos-2"
+			"value" : "/home/darga19/Documents/Tec/Algoritmos y Estructuras de Datos II/Proyecto-1-Datos-2"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
